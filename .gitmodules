@@ -1,0 +1,6 @@
+[submodule "xx_communication"]
+	path = xx_communication
+	url = git@github.com:v-rogg/obacht-sdk-communication.git
+[submodule "xx_tracking"]
+	path = xx_tracking
+	url = git@github.com:v-rogg/obacht-sdk-tracking.git
