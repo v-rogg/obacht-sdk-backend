@@ -1,7 +1,7 @@
 syntax = "proto3";
-package protobuf;
+package pb;
 
-option go_package = "github.com/v-rogg/xx_communication/protobuf";
+option go_package = "github.com/v-rogg/xx_communication/pb";
 
 message Coordinate {
   float x = 1;
@@ -9,14 +9,14 @@ message Coordinate {
 }
 
 message TransformRequest {
-  repeated Coordinate rawCoordinate = 1;
+  repeated Coordinate rawCoordinates = 1;
   float radian = 2;
 }
 
-message TransformAnswer {
-  repeated Coordinate transformedCoordinate = 1;
+message TransformResponse {
+  repeated Coordinate transformedCoordinates = 1;
 }
 
 service RawData {
-  rpc Transform(TransformRequest) returns (TransformAnswer) {}
+  rpc Transform(TransformRequest) returns (TransformResponse) {}
 }
