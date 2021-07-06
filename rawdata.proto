@@ -1,0 +1,21 @@
+syntax = "proto3";
+package protobuf;
+
+option go_package = "github.com/v-rogg/xx_communication/protobuf";
+
+message Coordinate {
+  float x = 1;
+  float y = 2;
+}
+
+message TransformRequest {
+  repeated Coordinate rawCoordinate = 1;
+}
+
+message TransformAnswer {
+  repeated Coordinate transformedCoordinate = 1;
+}
+
+service RawData {
+  rpc Transform(TransformRequest) returns (TransformAnswer) {}
+}
