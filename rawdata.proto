@@ -10,6 +10,7 @@ message Coordinate {
 
 message TransformRequest {
   repeated Coordinate rawCoordinate = 1;
+  float radian = 2;
 }
 
 message TransformAnswer {
