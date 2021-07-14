@@ -17,6 +17,26 @@ message TransformResponse {
   repeated Coordinate transformedCoordinates = 1;
 }
 
+message Zone {
+  string address = 1;
+  repeated Coordinate zoneObjectCoordinates = 2;
+}
+
+message Scan {
+  string address = 1;
+  repeated Coordinate scanPoints = 2;
+}
+
+message TrackRequest {
+  repeated Zone zones = 1;
+  repeated Scan scans = 2;
+}
+
+message TrackResponse {
+  repeated Coordinate persons = 1;
+}
+
 service RawData {
   rpc Transform(TransformRequest) returns (TransformResponse) {}
+  rpc TrackPersons(TrackRequest) returns (TrackResponse) {}
 }
