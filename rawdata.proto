@@ -30,6 +30,8 @@ message Scan {
 message TrackRequest {
   repeated Zone zones = 1;
   repeated Scan scans = 2;
+  float eps = 3;
+  int64 minSamples = 4;
 }
 
 message TrackResponse {
